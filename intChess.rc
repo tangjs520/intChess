@@ -1,0 +1,297 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\intChess.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\intChess.ico"
+IDI_WHITE_KING          ICON                    "res\\WhiteKing.ico"
+IDI_BLACK_KING          ICON                    "res\\BlackKing.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_WOOD                BITMAP                  "res\\Wood.bmp"
+IDB_STONE               BITMAP                  "res\\Stone.bmp"
+IDB_WHITECHESSMAN       BITMAP                  "res\\WhiteChessMan.bmp"
+IDB_BLACKCHESSMAN       BITMAP                  "res\\BlackChessMan.bmp"
+IDB_WHITECHESSBOARD     BITMAP                  "res\\WhiteChessBoard.bmp"
+IDB_BLACKCHESSBOARD     BITMAP                  "res\\BlackChessBoard.bmp"
+IDB_CHESSDESK           BITMAP                  "res\\Demo.bmp"
+IDB_CLOCKBACKGROUND     BITMAP                  "res\\ClockBackground.BMP"
+IDB_NUMBER              BITMAP                  "res\\Number.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "游戏(&G)"
+    BEGIN
+        MENUITEM "开局(&N)",                    ID_FILE_NEW
+        MENUITEM "打开棋局(&O)...",             ID_FILE_OPEN
+        MENUITEM "保存棋局(&S)",                ID_FILE_SAVE
+        MENUITEM "棋局另存为(&A)...",           ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "设置(&S)"
+    BEGIN
+        MENUITEM "交换棋子(&E)",                ID_SETUP_EXCHANGE
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于国际象棋大赛(&A)...",     ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于国际象棋大赛"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,15,WS_GROUP
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,15,20,20
+    LTEXT           "国际象棋大赛 1.0 测试版",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "雨林软件工作室   作者：tangjs520",IDC_STATIC,40,23,134,8
+    LTEXT           "版权所有 (C) 2003-2004",IDC_STATIC,40,34,119,8
+END
+
+IDD_PAWN_UPGRADE DIALOG  0, 0, 260, 114
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "兵的升变"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "后",ID_QUEEN_RADIO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,29,70,24,10
+    CONTROL         "车",ID_ROOK_RADIO,"Button",BS_AUTORADIOBUTTON,89,70,24,
+                    10
+    CONTROL         "马",ID_KNIGHT_RADIO,"Button",BS_AUTORADIOBUTTON | 
+                    BS_LEFT | BS_VCENTER,149,70,24,10
+    CONTROL         "象",ID_BISHOP_RADIO,"Button",BS_AUTORADIOBUTTON,209,70,
+                    24,10
+    DEFPUSHBUTTON   "确定",IDOK,99,92,60,15
+    GROUPBOX        " 兵升变 ",ID_PAWNUP_GROUP,9,9,241,75
+END
+
+IDD_RESULT DIALOGEX 0, 0, 186, 77
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "比赛结果"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,67,55,50,15
+    ICON            IDI_WHITE_KING,IDC_WHITE_KING,7,7,20,20
+    ICON            IDI_BLACK_KING,IDC_BLACK_KING,158,7,20,20
+    CTEXT           "",IDC_RESULT,37,13,110,12,0,WS_EX_CLIENTEDGE
+    CTEXT           "",IDC_SCORE,7,36,172,11,0,WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "作者：tangjs520"
+            VALUE "CompanyName", "雨林软件工作室"
+            VALUE "FileDescription", "国际象棋大赛"
+            VALUE "FileVersion", "1.0 测试版"
+            VALUE "InternalName", "intChess"
+            VALUE "LegalCopyright", "版权所有 (C) 2003-2004"
+            VALUE "LegalTrademarks", "雨林"
+            VALUE "OriginalFilename", "intChess.exe"
+            VALUE "ProductName", "国际象棋大赛"
+            VALUE "ProductVersion", "1.0 测试版"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_RESULT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 70
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_MOVED               WAVE                    "res\\Moved.wav"
+IDR_KILLED              WAVE                    "res\\Killed.wav"
+IDR_ILLEGAL             WAVE                    "res\\Illegal.wav"
+IDR_CHECKED             WAVE                    "res\\Checked.wav"
+IDR_SHIFTED             WAVE                    "res\\Shifted.wav"
+IDR_WINED               WAVE                    "res\\Wined.wav"
+IDR_LOSED               WAVE                    "res\\Losed.wav"
+IDR_DRAW                WAVE                    "res\\Draw.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "国际象棋大赛\n\n棋局文件\n棋局文件 (*.icf)\n.icf\n国际象棋大赛棋局文件\n国际象棋大赛棋局文件"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "国际象棋大赛"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_GETVERSION_ERR      "获取操作系统版本信息失败或不支持该操作系统。\n\n应用程序仅支持Windows9x、WindowsMe、WindowsNT、Windows2000、WindowsXP及其它们各自的升级版本。"
+    IDS_GETRESOLUTION_ERR   "应用程序至少需要1024×768的分辨率，请调整分辨率后再运行应用程序。"
+    IDS_DEFAULT_WHITE_PLAYER_NAME "东方不败"
+    IDS_DEFAULT_BLACK_PLAYER_NAME "独孤求败"
+    IDS_WHITE_SIDE          "白方"
+    IDS_BLACK_SIDE          "黑方"
+    IDS_HAS_WINED           "赢了！"
+    IDS_DRAW                "和局"
+    IDS_FILE_ERR            "非预期的文件格式或棋局文件已被破坏！"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\intChess.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
